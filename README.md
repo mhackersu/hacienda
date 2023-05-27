@@ -1,24 +1,27 @@
-# README
+# Hacienda
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application to organize all things household related.
 
-Things you may want to cover:
+# Development
+```
+bundle install
+rails server
+```
 
-* Ruby version
+# Features
 
-* System dependencies
+- Authentication handled by Devise
 
-* Configuration
+# Data Layer
 
-* Database creation
+- Data layer is provided by Postgresql
 
-* Database initialization
+# Architectural Decisions
 
-* How to run the test suite
+# Testing
 
-* Services (job queues, cache servers, search engines, etc.)
+# Production
 
-* Deployment instructions
+- Application is configured for deployment to Heroku
 
-* ...
+# Contributions
