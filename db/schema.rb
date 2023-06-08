@@ -10,9 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_26_234428) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_213123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "context", force: :cascade do |t|
+    t.integer "id_context"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ledgers", force: :cascade do |t|
+    t.integer "id_ledger"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "id_transaction"
+    t.integer "id_vendor"
+    t.decimal "amount"
+    t.date "date_due"
+    t.text "status"
+    t.date "date_posted"
+    t.date "date_stmt"
+    t.date "pmt_date"
+    t.string "pmt_type"
+    t.boolean "posted"
+    t.string "reference_num"
+    t.integer "id_ledger"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +57,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_26_234428) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vendors", force: :cascade do |t|
+    t.integer "id_vendor"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
