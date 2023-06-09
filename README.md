@@ -22,6 +22,8 @@ rails server
 
 # Production
 
-- Application is configured for deployment to Heroku
+- Application is configured for deployment to Render.com
+
+- Toggle `rake db:seed` in `render-build.sh` for initial admin user in production.
 
 # Contributions
